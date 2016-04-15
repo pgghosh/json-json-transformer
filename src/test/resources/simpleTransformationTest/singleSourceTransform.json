@@ -1,0 +1,17 @@
+{
+  "inputs" : [
+    {
+      "ref" : "asset",
+      "provider" : "FILE",
+      "args" : {
+        "file" : "src/test/resources/simpleTransformationTest/input1.json"
+      }
+    }
+  ],
+  "output" : {
+    "_id" : "asset:programme.uuid",
+    "title" : "asset:name",
+    "synopsis" : "asset:description",
+    "credits" : "asset:credits"
+  }
+}

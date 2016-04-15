@@ -1,0 +1,122 @@
+{
+  "_id": "5704d16777490b0013214136",
+  "status": "IN_PROGRESS",
+  "action": "UPDATE",
+  "updated": "2016-04-06T09:04:54.827Z",
+  "type": "asset",
+  "assetId": "MAIN0000000002076392",
+  "assetKey": "1000305217147824",
+  "assetType": "SYS_SDpush_HDpdl",
+  "channelGroupId": 10057,
+  "channelGroupName": "Sky Store",
+  "licenceEndDateTime": "2017-12-31T23:59:59Z",
+  "branding": "Sky Store",
+  "description": "A poker player gets mixed up in the criminal underworld in this thriller starring George Eads, Steven Seagal and Vinnie Jones. Strong language/violence/sex/flashing images. (2014)(85 mins)",
+  "downloadLink": "oig://FFD70346",
+  "duration": 5100,
+  "fieldTrial": 0,
+  "pdlFileSize": 831706198,
+  "genreId": 6,
+  "name": "Gutshot",
+  "programme": {
+    "availabilities": [],
+    "type": "assetprogramme",
+    "uuid": "56e0c004-932c-4af8-8aeb-50a8a856ef8c"
+  },
+  "programId": 2686138,
+  "providerId": "bsky_skyvault",
+  "sortName": "Gutshot",
+  "titleSortOffset": 0,
+  "soundType": 2,
+  "subGenreId": 9,
+  "catchups": [],
+  "catalogueExpiry": "2016-11-23T22:59:59Z",
+  "media": [
+    {
+      "mediaType": "SYS_HDpush_SDpdl",
+      "mediaURI": "PV2076395"
+    },
+    {
+      "mediaType": "SYS_Trailer",
+      "endDateTime": "2038-04-22T00:00:00Z",
+      "mediaURI": "http://cdn.sky.com/60441/bsky_skyvault/PREVIEW/bsky_skyvault-TRAI0000000002078462-201512091121330000.nff"
+    },
+    {
+      "mediaType": "SYS_Thumbnails",
+      "endDateTime": "2038-04-22T00:00:00Z",
+      "mediaURI": "http://cdn.sky.com/60454/bsky_skyvault/BOX_COVER/bsky_skyvault-THVT0000000001058601-201512101305190000.JPG"
+    },
+    {
+      "mediaType": "CoverArt",
+      "endDateTime": "2038-04-22T00:00:00Z",
+      "mediaURI": "http://cdn.sky.com/60453/bsky_skyvault/COVER_ART/bsky_skyvault-PPCO0000000001058607-201512101305180000.JPG"
+    },
+    {
+      "mediaType": "Rotten Tomatoes Critics Rating",
+      "mediaURI": "11"
+    },
+    {
+      "endDateTime": "2038-04-22T00:00:00Z",
+      "mediaURI": "opaque data for plannermovies",
+      "mediaType": "Planner Movies"
+    },
+    {
+      "mediaURI": "opaque data for morelikethis",
+      "mediaType": "More Like This",
+      "endDateTime": "2038-04-22T00:00:00Z"
+    },
+    {
+      "mediaType": "WatchList v2",
+      "endDateTime": "2038-04-22T00:00:00Z",
+      "mediaURI": "opaque data for watchlist v2"
+    }
+  ],
+  "credits": [
+    {
+      "creditType": "Credits UUID for Asset",
+      "order": 1,
+      "organisationName": "56e0c004-932c-4af8-8aeb-50a8a856ef8c"
+    },
+    {
+      "creditType": "SYS_Actor",
+      "order": 0,
+      "personGivenName": "Lee",
+      "personFamilyName": "Beaudin"
+    },
+    {
+      "creditType": "SYS_Actor",
+      "order": 0,
+      "personGivenName": "Scott",
+      "personFamilyName": "Gibson"
+    },
+    {
+      "order": 0,
+      "personGivenName": "Leah",
+      "personFamilyName": "Gibson",
+      "creditType": "SYS_Actor"
+    },
+    {
+      "personGivenName": "Adrian",
+      "personFamilyName": "Langley",
+      "creditType": "SYS_Director",
+      "order": 0
+    },
+    {
+      "creditType": "SYS_Publisher",
+      "order": 5,
+      "organisationName": "Movie Partnership Limited, The"
+    }
+  ],
+  "uhdFlag": false,
+  "analogueOutputFlag": false,
+  "audioDescriptionFlag": false,
+  "bto1Flag": false,
+  "bto3Flag": false,
+  "hardOfHearingFlag": false,
+  "hdFlag": false,
+  "parentalRating": 4,
+  "ppvFlag": true,
+  "subtitleFlag": false,
+  "widescreenFlag": true,
+  "active": true
+}

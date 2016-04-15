@@ -1,0 +1,40 @@
+{
+  "inputs" : [
+    {
+      "url" : "file:\\Users\\Partha\\IdeaProjects\\ethan-storm\\json-json-transformer\\src\\test\\resources\\Asset.json",
+      "ref" : "fileAsset"
+    },
+    {
+      "url" : "classpath:/resources/Asset.json",
+      "ref" : "classpathAsset"
+    },
+    {
+      "url" : "mongo:db.backupCollection/_id=123",
+      "ref" : "dbAsset"
+    },
+    {
+      "url" : "class:com.sky.search.transformation.AssetProvider.getAsset()",
+      "ref" : "asset"
+    }
+  ],
+  "document" : {
+    "name" : "asset:name",
+    "types" : {
+      "$array" : {
+        "sourcePath" : "asset:types",
+        "elementRef" : "assetType",
+        "document" : "assetType:name"
+      }
+    },
+    "contributions" : {
+      "$array" : {
+        "sourcePath" : "asset:contributions",
+        "elementRef" : "assetContribution",
+        "document" : {
+          "type" : "assetContribution:contributionType",
+          "name" : "assetContribution:name"
+        }
+      }
+    }
+  }
+}

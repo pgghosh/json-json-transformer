@@ -1,0 +1,49 @@
+{
+  "inputs" : [
+    {
+      "ref" : "asset",
+      "provider" : "FILE",
+      "args" : {
+        "file" : "src/test/resources/simpleTransformationTest/input1.json"
+      }
+    }
+  ],
+  "output" : {
+    "_id" : "asset:programme.uuid",
+    "title" : "asset:name",
+    "synopsis" : "asset:description",
+    "credits" : {
+      "$array" : {
+        "sourcePath" : "asset:credits",
+        "elementRef" : "credit",
+        "document" : {
+          "type" : {
+            "$const" : {"value" : "CREDIT"}
+          },
+          "name" : "credit:organisationName"
+        }
+      }
+    },
+    "media" : {
+      "$array" : {
+        "sourcePath" : "asset:media",
+        "elementRef" : "media",
+        "document" : {
+          "elType" : {
+            "$const" : {"value" : "MEDIA"}
+          },
+          "type" : "media:mediaType",
+          "uri" : "media:mediaURI",
+          "endTime" : {
+            "$date" : {
+              "value" : "media:endDateTime",
+              "sourceFormat" : "yyyy-MM-dd'T'HH:mm:ss'Z'",
+              "targetFormat" : "EPOCH"
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

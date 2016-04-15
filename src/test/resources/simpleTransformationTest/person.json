@@ -1,0 +1,13 @@
+{
+  "firstname" : "Sarbani",
+  "lastname" : "Ghosh",
+  "age": 21,
+  "addresses" : [
+    {
+      "type" : "Home",
+      "line1" : "",
+      "PostCode": ""
+    },
+
+  ]
+}
