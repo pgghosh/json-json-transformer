@@ -1,18 +1,17 @@
-package com.sky.search.transformer.json.transformmethods;
+package uk.co.pgsoftware.utils.json.transformer.transformmethods;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
-import com.sky.search.transformer.json.TransformationContext;
-import com.sky.search.transformer.json.TransformationException;
+import uk.co.pgsoftware.utils.json.transformer.TransformationContext;
+import uk.co.pgsoftware.utils.json.transformer.TransformationException;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.sky.search.transformer.json.transformmethods.TransformationUtils.resolveJsonPath;
+import static uk.co.pgsoftware.utils.json.transformer.transformmethods.TransformationUtils.resolveJsonPath;
 
 /**
  * Created by partha ghosh on 14/04/2016.
@@ -26,19 +25,16 @@ public class DatatypeTransformationMethods implements TransformationMethod {
 
     public JsonElement convertToNumber(JsonObject jsonFragment, TransformationContext transformationContext){
         String valueToConvert = resolveValue(jsonFragment.getAsJsonPrimitive("value").getAsString(),transformationContext);
-        JsonPrimitive returnValue = null;
         try{
             long longValue = Long.parseLong(valueToConvert);
-            returnValue = new JsonPrimitive(longValue);
+            return new JsonPrimitive(longValue);
         }catch (NumberFormatException nfe){
             throw new TransformationException("Exception raised when converting to number",nfe);
         }
-        return returnValue;
     }
 
     public JsonElement convertToBoolean(JsonObject jsonFragment, TransformationContext transformationContext){
         String valueToConvert = resolveValue(jsonFragment.getAsJsonPrimitive("value").getAsString(),transformationContext);
-
         boolean booleanValue = Boolean.parseBoolean(valueToConvert);
         return new JsonPrimitive(booleanValue);
     }

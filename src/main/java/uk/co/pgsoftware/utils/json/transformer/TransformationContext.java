@@ -1,4 +1,4 @@
-package com.sky.search.transformer.json;
+package uk.co.pgsoftware.utils.json.transformer;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class TransformationContext {
 
-    Map<String,JsonObject> inputJsons = new HashMap<>();
+    private Map<String,JsonObject> inputJsons = new HashMap<>();
 
     public void loadJsonFile(String jsonRef,String fileName) throws IOException {
 
@@ -44,4 +44,7 @@ public class TransformationContext {
         return inputJsons.get(jsonRef);
     }
 
+    public void clearContext(){
+        inputJsons.clear();
+    }
 }

@@ -1,16 +1,15 @@
-package com.sky.search.transformer.json.transformmethods;
+package uk.co.pgsoftware.utils.json.transformer.transformmethods;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonPrimitive;
-import com.sky.search.transformer.json.TransformationContext;
-import com.sky.search.transformer.json.TransformationException;
-import com.sky.search.transformer.json.TransformationFactory;
+import uk.co.pgsoftware.utils.json.transformer.TransformationContext;
+import uk.co.pgsoftware.utils.json.transformer.TransformationException;
+import uk.co.pgsoftware.utils.json.transformer.TransformationFactory;
 
 import java.util.Map;
 import java.util.function.BiFunction;
 
-import static com.sky.search.transformer.json.transformmethods.TransformationUtils.resolveJsonPath;
+import static uk.co.pgsoftware.utils.json.transformer.transformmethods.TransformationUtils.resolveJsonPath;
 
 /**
  * Created by partha ghosh on 07/04/2016.
@@ -18,7 +17,7 @@ import static com.sky.search.transformer.json.transformmethods.TransformationUti
 public class GenericTransformationMethods implements TransformationMethod{
 
     {
-        registeredMethods.put("default",this::simpleTransformation);
+        registeredMethods.put(DEFAULT_TRANSFORMATION_METHOD,this::simpleTransformation);
         registeredMethods.put("const",this::constantValueTransformation);
     }
 
@@ -51,7 +50,4 @@ public class GenericTransformationMethods implements TransformationMethod{
         return jsonFragment.getAsJsonPrimitive("value");
     }
 
-//    public JsonElement specialKeyTransformation(JsonObject jsonFragment,TransformationContext transformationContext){
-//        return jsonFragment.getAsJsonPrimitive("value");
-//    }
 }

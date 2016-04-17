@@ -1,4 +1,4 @@
-package com.sky.search.transformer.json;
+package uk.co.pgsoftware.utils.json.transformer;
 
 /**
  * Created by Partha on 09/04/2016.

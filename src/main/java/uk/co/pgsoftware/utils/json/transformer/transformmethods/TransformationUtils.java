@@ -1,16 +1,16 @@
-package com.sky.search.transformer.json.transformmethods;
+package uk.co.pgsoftware.utils.json.transformer.transformmethods;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.sky.search.transformer.json.TransformationContext;
-import com.sky.search.transformer.json.TransformationException;
+import uk.co.pgsoftware.utils.json.transformer.TransformationContext;
+import uk.co.pgsoftware.utils.json.transformer.TransformationException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Partha on 09/04/2016.
+ * Created by Partha Ghosh on 09/04/2016.
  */
 public class TransformationUtils {
 
@@ -23,7 +23,7 @@ public class TransformationUtils {
         Pattern pattern = Pattern.compile("^([^:\\s]*):([^:\\s]*)$");
         Matcher matcher = pattern.matcher(inputJsonPath);
         if(!matcher.find()){
-            // throw exception
+            throw new TransformationException("input JSON Path : "+ inputJsonPath +" not conforming to spec <inputJsonRef>:<jsonPathFromRoot>");
         }
         String jsonRef = matcher.group(1);
         String jsonPath = matcher.group(2);

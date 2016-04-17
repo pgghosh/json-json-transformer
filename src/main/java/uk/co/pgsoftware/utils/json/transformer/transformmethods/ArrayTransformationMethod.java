@@ -1,13 +1,13 @@
-package com.sky.search.transformer.json.transformmethods;
+package uk.co.pgsoftware.utils.json.transformer.transformmethods;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.sky.search.transformer.json.TransformationContext;
-import com.sky.search.transformer.json.TransformationException;
-import com.sky.search.transformer.json.TransformationFactory;
+import uk.co.pgsoftware.utils.json.transformer.TransformationContext;
+import uk.co.pgsoftware.utils.json.transformer.TransformationException;
+import uk.co.pgsoftware.utils.json.transformer.TransformationFactory;
 
-import static com.sky.search.transformer.json.transformmethods.TransformationUtils.resolveJsonPath;
+import static uk.co.pgsoftware.utils.json.transformer.transformmethods.TransformationUtils.resolveJsonPath;
 
 /**
  * Created by Partha on 09/04/2016.
@@ -39,13 +39,14 @@ public class ArrayTransformationMethod implements TransformationMethod {
                 throw new TransformationException("Invalid target Document ref provided.");
             else{
                 transformationContext.setJsonRef(sourceRef,sourceArray.get(i).getAsJsonObject());
-                jel = TransformationFactory.getTranformationMethod("default").apply(targetDoc.getAsJsonObject(),transformationContext);
+                jel = TransformationFactory.getTranformationMethod(DEFAULT_TRANSFORMATION_METHOD)
+                        .apply(targetDoc.getAsJsonObject(),transformationContext);
                 transformationContext.removeJsonRef(sourceRef);
             }
             targetJsonArray.add(jel);
         }
 
-        return  targetJsonArray;
+        return targetJsonArray;
 
     }
 }
