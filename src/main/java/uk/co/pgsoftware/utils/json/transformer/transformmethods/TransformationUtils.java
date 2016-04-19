@@ -3,6 +3,7 @@ package uk.co.pgsoftware.utils.json.transformer.transformmethods;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
 import uk.co.pgsoftware.utils.json.transformer.TransformationContext;
 import uk.co.pgsoftware.utils.json.transformer.TransformationException;
 
@@ -17,18 +18,30 @@ public class TransformationUtils {
     private static final String ARRAY_REGEX="^(\\w+)(?:\\[\\d+\\])+$";
     private static final String ARRAY_INDICES_REGEX="\\[(\\d+)\\]";
 
+    public static JsonElement resolveJsonPrimitiveValue(JsonPrimitive jsonValue,TransformationContext context){
+        if(jsonValue.isString()){
+            return resolveJsonPath(jsonValue.getAsString(),context);
+        }
+        return jsonValue;
+    }
+
     // inputJsonPath spec => <inputJsonRef>:<jsonPathFromRoot>
     public static JsonElement resolveJsonPath(String inputJsonPath, TransformationContext context){
 
         Pattern pattern = Pattern.compile("^([^:\\s]*):([^:\\s]*)$");
         Matcher matcher = pattern.matcher(inputJsonPath);
-        if(!matcher.find()){
-            throw new TransformationException("input JSON Path : "+ inputJsonPath +" not conforming to spec <inputJsonRef>:<jsonPathFromRoot>");
+        if(!matcher.find()){ // Could be a String constant
+            return new JsonPrimitive(inputJsonPath);
         }
         String jsonRef = matcher.group(1);
         String jsonPath = matcher.group(2);
 
         JsonObject json = context.getJson(jsonRef);
+
+        if(jsonPath.equals("") || jsonPath.equals(".")){
+            return json;
+        }
+
         String[] subPaths = jsonPath.split("\\.");
         int counter=0;
         JsonElement result=null;
