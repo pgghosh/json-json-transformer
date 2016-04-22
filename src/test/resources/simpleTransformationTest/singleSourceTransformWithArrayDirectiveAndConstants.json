@@ -29,9 +29,7 @@
         "sourcePath" : "asset:media",
         "elementRef" : "media",
         "document" : {
-          "elType" : {
-            "$const" : {"value" : "MEDIA"}
-          },
+          "elType" : "MEDIA",
           "type" : "media:mediaType",
           "uri" : "media:mediaURI",
           "endTime" : {

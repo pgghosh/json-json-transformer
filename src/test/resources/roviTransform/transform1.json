@@ -1,0 +1,25 @@
+{
+  "inputs" : [
+    {
+      "ref" : "programme",
+      "provider" : "FILE",
+      "args" : {
+        "file" : "src/test/resources/roviTransform/programme1.json"
+      }
+    }
+  ],
+  "output" : {
+    "ref" : {
+      "id" : "programme:_id",
+      "idSpace" : {"$const" : {"value" : "program"} }
+    },
+    "in" : {"$const" : {"value" : "en"} },
+    "type" : {
+      "$cond" : {
+
+      }
+    },
+    "synopsis" : "asset:description",
+    "credits" : "asset:credits"
+  }
+}}
