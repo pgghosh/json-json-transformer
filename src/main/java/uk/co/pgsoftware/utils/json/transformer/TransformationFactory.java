@@ -61,7 +61,7 @@ public class TransformationFactory {
         return true;
     }
 
-    public static BiFunction<JsonObject,TransformationContext,JsonElement> getTranformationMethod(String directiveName){
+    public static BiFunction<JsonObject,TransformationContext,JsonElement> getTransformationMethod(String directiveName){
         return REGISTRY.get(directiveName);
     }
 

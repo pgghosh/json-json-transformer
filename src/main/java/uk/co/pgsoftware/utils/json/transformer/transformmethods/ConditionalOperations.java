@@ -13,7 +13,9 @@ import java.util.stream.Stream;
  */
 public class ConditionalOperations {
     enum OPERATOR{
-        EQUAL("=",ConditionalOperations::equal);
+        EQUAL("=",ConditionalOperations::equal),
+        GREATER_THAN(">",ConditionalOperations::greaterThan),
+        LESS_THAN("<",ConditionalOperations::lessThan);
 
         private String symbol;
         private BiFunction<JsonPrimitive,JsonPrimitive,JsonPrimitive> method;

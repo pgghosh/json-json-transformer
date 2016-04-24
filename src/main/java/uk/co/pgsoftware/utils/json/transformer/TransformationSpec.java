@@ -72,7 +72,7 @@ public class TransformationSpec {
 
     public JsonObject transform() {
         return TransformationFactory
-                .getTranformationMethod(TransformationMethod.DEFAULT_TRANSFORMATION_METHOD)
+                .getTransformationMethod(TransformationMethod.DEFAULT_TRANSFORMATION_METHOD)
                 .apply(translationDocument, context).getAsJsonObject();
     }
 }

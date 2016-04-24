@@ -9,6 +9,7 @@ import uk.co.pgsoftware.utils.json.transformer.TransformationFactory;
 import java.util.Map;
 import java.util.function.BiFunction;
 
+import static uk.co.pgsoftware.utils.json.transformer.TransformationFactory.getTransformationMethod;
 import static uk.co.pgsoftware.utils.json.transformer.transformmethods.TransformationUtils.resolveJsonPath;
 
 /**
@@ -31,7 +32,7 @@ public class GenericTransformationMethods implements TransformationMethod{
                     throw new TransformationException("Value for methodDirective : "+key+" should be a json Object.");
                 }
                 String methodDirective = key.substring(1);
-                BiFunction<JsonObject, TransformationContext, JsonElement> transformationMethod = TransformationFactory.getTranformationMethod(methodDirective);
+                BiFunction<JsonObject, TransformationContext, JsonElement> transformationMethod = getTransformationMethod(methodDirective);
                 if(transformationMethod == null){
                     throw new TransformationException("Transformation method for directive : "+methodDirective+" not registered or cannot be found.");
                 }

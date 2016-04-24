@@ -16,6 +16,7 @@ public interface TransformationMethod {
 
     String DEFAULT_TRANSFORMATION_METHOD="default";
     Map<String,BiFunction<JsonObject,TransformationContext,JsonElement>> registeredMethods = new HashMap<>();
+    BiFunction<JsonObject,TransformationContext,JsonElement> defaultTransformation = TransformationFactory.getTransformationMethod(DEFAULT_TRANSFORMATION_METHOD);
     default void registerMethod(){
         registeredMethods.entrySet().
                 forEach(entry -> TransformationFactory.registerMethod(entry.getKey(),entry.getValue()));
