@@ -34,6 +34,7 @@ public class ConditionalOperations {
         public BiFunction<JsonPrimitive,JsonPrimitive,JsonPrimitive> getMethod(){
             return method;
         }
+        public String getSymbol(){return symbol;}
     }
 
     public static JsonPrimitive equal(JsonPrimitive lhs,JsonPrimitive rhs){

@@ -6,12 +6,10 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import uk.co.pgsoftware.utils.json.transformer.TransformationContext;
 import uk.co.pgsoftware.utils.json.transformer.TransformationException;
-import uk.co.pgsoftware.utils.json.transformer.TransformationFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static uk.co.pgsoftware.utils.json.transformer.TransformationFactory.getTransformationMethod;
 import static uk.co.pgsoftware.utils.json.transformer.transformmethods.TransformationUtils.resolveJsonPath;
 
 /**
@@ -76,7 +74,7 @@ public class ArrayTransformationMethod implements TransformationMethod {
 
     private boolean evaluateFilter(JsonElement filterArgs, TransformationContext context){
 
-        JsonPrimitive filterResult = null;
+        JsonPrimitive filterResult;
         if(filterArgs.isJsonNull() || filterArgs.isJsonArray()){
             throw new TransformationException("Filter should either be a json primitive or jsonObject which has a directive, that returns a boolean value, as the only element");
         }
