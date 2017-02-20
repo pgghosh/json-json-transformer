@@ -1,0 +1,16 @@
+[
+  {
+    "title" : "Song of ice and Fire",
+    "description" : "Game of Thrones is based on the novel A Game of Thrones, the first entry in the A Song of Ice and Fire series by George R. R. Martin. The story takes place in a fictional world, primarily upon a continent called Westeros (and on another continent to the east known as Essos)",
+    "airingYear" : 2011,
+    "number" : 1,
+    "seriesTitle" : "Game of Thrones"
+  },
+  {
+    "title" : "A Clash of Kings",
+    "description" : "It mostly covers the events of A Clash of Kings, the second novel of the A Song of Ice and Fire series by George R. R. Martin, of which the series is an adaptation.",
+    "airingYear" : 2012,
+    "number" : 2,
+    "seriesTitle" : "Game of Thrones"
+  }
+]

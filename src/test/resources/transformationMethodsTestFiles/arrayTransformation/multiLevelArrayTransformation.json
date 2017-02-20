@@ -1,0 +1,29 @@
+{
+  "output" : {
+    "$multiarray" : {
+      "iterateOver": {
+          "sourcePath" : "series:seasons",
+          "elementRef" : "season",
+          "iterateOver" : {
+              "sourcePath" : "season:episodes",
+              "elementRef" : "episode",
+              "iterateOver" : {
+                  "sourcePath" : "episode:availabilities",
+                  "elementRef" : "availability",
+                  "iterateOver" : {
+                      "sourcePath" : "availability:airingTimes",
+                      "elementRef" : "airingTime"
+                  }
+              }
+          }
+        },
+      "document" : {
+        "seriesTitle" : "series:seriesTitle",
+        "seasonTitle" : "season:seasonTitle",
+        "episodeTitle" : "episode:episodeTitle",
+        "channel" : "availability:channel",
+        "airingTime" : "airingTime:airingTime"
+      }
+    }
+  }
+}

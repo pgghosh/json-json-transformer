@@ -70,9 +70,9 @@ public class TransformationSpec {
         return context;
     }
 
-    public JsonObject transform() {
+    public JsonElement transform() {
         return TransformationFactory
                 .getTransformationMethod(TransformationMethod.DEFAULT_TRANSFORMATION_METHOD)
-                .apply(translationDocument, context).getAsJsonObject();
+                .apply(translationDocument, context);
     }
 }

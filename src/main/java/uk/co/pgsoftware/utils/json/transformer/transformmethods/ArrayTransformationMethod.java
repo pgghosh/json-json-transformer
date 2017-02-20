@@ -10,6 +10,7 @@ import uk.co.pgsoftware.utils.json.transformer.TransformationException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static uk.co.pgsoftware.utils.json.transformer.TransformationFactory.defaultTransformationMethod;
 import static uk.co.pgsoftware.utils.json.transformer.transformmethods.TransformationUtils.resolveJsonPath;
 
 /**
@@ -66,7 +67,7 @@ public class ArrayTransformationMethod implements TransformationMethod {
         }
         else{
             transformationContext.setJsonRef(sourceRef,sourceElement.getAsJsonObject());
-            jel = defaultTransformation.apply(targetDoc.getAsJsonObject(),transformationContext);
+            jel = defaultTransformationMethod.apply(targetDoc.getAsJsonObject(),transformationContext);
             transformationContext.removeJsonRef(sourceRef);
         }
         return jel;
@@ -81,7 +82,7 @@ public class ArrayTransformationMethod implements TransformationMethod {
         if(filterArgs.isJsonPrimitive()){
             filterResult = resolveJsonPath(filterArgs.getAsString(),context).getAsJsonPrimitive();
         }else{
-            filterResult = defaultTransformation.apply(filterArgs.getAsJsonObject(),context).getAsJsonPrimitive();
+            filterResult = defaultTransformationMethod.apply(filterArgs.getAsJsonObject(),context).getAsJsonPrimitive();
         }
         if(filterResult==null || !filterResult.isBoolean()){
             throw new TransformationException("Filter Result should be boolean.");

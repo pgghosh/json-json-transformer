@@ -1,0 +1,15 @@
+{
+  "output" : {
+    "$array" : {
+      "sourcePath" : "series:seasons",
+      "elementRef" : "season",
+      "document" : {
+        "title" : "season:seasonTitle",
+        "description" : "season:synopsis",
+        "airingYear" : "season:year",
+        "number" : "season:seasonNumber",
+        "seriesTitle" : "series:seriesTitle"
+      }
+    }
+  }
+}

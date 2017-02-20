@@ -1,6 +1,7 @@
 {
   "id" : "ser001",
   "seriesTitle" : "Game of Thrones",
+  "seriesDescription" : "Game of Thrones is an American fantasy drama television series created by David Benioff and D. B. Weiss. It is an adaptation of A Song of Ice and Fire, George R. R. Martin's series of fantasy novels, the first of which is titled A Game of Thrones.",
   "genre" : "Fantasy",
   "country" : "US",
   "createdBy" : "David Benioff",
@@ -9,6 +10,7 @@
       "id" : "sea-1-001",
       "seasonNumber" : 1,
       "seasonTitle" : "Song of ice and Fire",
+      "synopsis" : "Game of Thrones is based on the novel A Game of Thrones, the first entry in the A Song of Ice and Fire series by George R. R. Martin. The story takes place in a fictional world, primarily upon a continent called Westeros (and on another continent to the east known as Essos)",
       "year" : 2011,
       "episodes" : [
         {
@@ -85,6 +87,7 @@
       "id" : "sea-1-002",
       "seasonNumber" : 2,
       "seasonTitle" : "A Clash of Kings",
+      "synopsis" : "It mostly covers the events of A Clash of Kings, the second novel of the A Song of Ice and Fire series by George R. R. Martin, of which the series is an adaptation.",
       "year" : 2012,
       "episodes" : [
         {

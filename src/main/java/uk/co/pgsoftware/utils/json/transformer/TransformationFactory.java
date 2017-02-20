@@ -10,12 +10,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiFunction;
 
+import static uk.co.pgsoftware.utils.json.transformer.transformmethods.TransformationMethod.DEFAULT_TRANSFORMATION_METHOD;
+
 /**
  * Created by Partha Ghosh on 07/04/2016.
  */
 public class TransformationFactory {
     private static final Map<String,BiFunction<JsonObject,TransformationContext,JsonElement>> REGISTRY = new HashMap<>();
     private static final Map<String,TransformationInputProvider> TRANSFORMATION_INPUT_PROVIDER_MAP = new HashMap<>();
+
+    public static BiFunction<JsonObject,TransformationContext,JsonElement> defaultTransformationMethod;
 
     private static boolean init=false;
 
@@ -26,6 +30,7 @@ public class TransformationFactory {
         new FastClasspathScanner("uk.co.pgsoftware.utils.json.transformer")
                 .matchClassesImplementing(TransformationInputProvider.class,c -> registerInputProvider(c))
                 .scan();
+        defaultTransformationMethod = getTransformationMethod(DEFAULT_TRANSFORMATION_METHOD);
         init = true;
     }
 
